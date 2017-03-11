@@ -1,18 +1,13 @@
 <?php
 
-use Illuminate\Http\Request;
+Route::get('/searchCityName/{name}', ['uses' => 'CityController@searchCityName']);
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+Route::get('/searchCityByCoords', ['uses' => 'CityController@searchCityByCoords']);
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/saveFavouriteCity', ['uses' => 'FavouriteCitiesController@saveFavouriteCity']);
+
+Route::get('/showFavouriteCities', ['uses' => 'FavouriteCitiesController@showFavouriteCities']);
+
+Route::delete('/deleteFavouriteCity/{id}', ['uses' => 'FavouriteCitiesController@deleteFavouriteCity']);
+
+Route::get('/getForecast/{id}/{date}', ['uses' => 'ForecastController@getForecast']);

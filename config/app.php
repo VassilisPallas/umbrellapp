@@ -186,6 +186,13 @@ return [
          * Ide Helper Provider
          */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+
+        /*
+         * API Service Providers
+         */
+        Umbrellapp\Providers\CityServiceProvider::class,
+        Umbrellapp\Providers\FavouriteCitiesServiceProvider::class,
+        Umbrellapp\Providers\ForecastServiceProvider::class,
     ],
 
     /*
