@@ -3,7 +3,7 @@
 **Εγκατάσταση**
 ----
 
-Στο αρχείο umbrellapp files υπάρχει το αρχείο umbrellapp.sql. Δημιουργεί την βάση με τις κατάλληλες εγγραφές.
+Στο αρχείο [umbrellapp files](https://drive.google.com/file/d/0B4LmYFPphsPsSGh4X3dUcnFpTzg/view?usp=sharing) υπάρχει το αρχείο umbrellapp.sql. Δημιουργεί την βάση με τις κατάλληλες εγγραφές.
 Το default username και password για την βάση είναι root και '', τα οποία μπορούν να αλλάξουν από το config/database.
 
 
