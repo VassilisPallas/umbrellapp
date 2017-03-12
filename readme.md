@@ -85,6 +85,7 @@
   * **Code:** 200 <br />
     **Content:**
       ```json
+      
         [ 
            { 
               "id": 264371, 
@@ -94,6 +95,7 @@
               "lon": "37.97945" 
            }
         ]
+    
       ```
  
 * **Error Response:**
@@ -197,6 +199,7 @@
   * **Code:** 200 <br />
     **Content:**
       ```json
+      
         [ 
           { 
             "id": 264371, 
@@ -207,6 +210,7 @@
             "country_name": "Greece"
           }
         ]
+    
       ```
  
 * **Error Response:**
