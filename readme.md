@@ -1,11 +1,14 @@
 ## Umbreallpp
 
-**Installation**
+**Εγκατάσταση**
+----
 
+Στο αρχείο umbrellapp files υπάρχει το αρχείο umbrellapp.sql. Δημιουργεί την βάση με τις κατάλληλες εγγραφές.
+Το default username και password για την βάση είναι root και '', τα οποία μπορούν να αλλάξουν από το config/database.
 
 
 **Documentation**
-
+----
 **Search City By Name**
 ----
   Returns json data about a given city name
