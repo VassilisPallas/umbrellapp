@@ -21,7 +21,12 @@ class FavouriteCityService
 
     public function saveFavouriteCity($id)
     {
-        return $this->favouriteCityRepository->create(['city_id' => $id]);
+        $exists = $this->favouriteCityRepository->findBy('city_id', $id);
+
+        if (!$exists)
+            return $this->favouriteCityRepository->create(['city_id' => $id]);
+
+        return null;
     }
 
     public function showFavouriteCities()

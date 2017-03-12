@@ -18,8 +18,17 @@ class ForecastController extends Controller
         $this->forecastService = $forecastService;
     }
 
-    public function getForecast($id, $date)
+    public function getForecast($id = null, $date = null)
     {
-        return response()->json($this->forecastService->getForecast($id, $date), 200);
+        if (!$id || !$date) {
+            return response()->json(array('status' => 'data are missing'), 422);
+        }
+
+        $data = $this->forecastService->getForecast($id, $date);
+
+        if ($data)
+            return response()->json($data, 200);
+
+        return response()->json(array('status' => 'forecast not found'), 404);
     }
 }

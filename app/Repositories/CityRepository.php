@@ -50,8 +50,12 @@ class CityRepository extends Repository implements ICityRepository
         $response = str_replace('"""', '', $response);
         $response = str_replace('\n', '', $response);
         $json = json_decode($response, true);
-        $city = $json['results'][0]['address_components'][5]['long_name'];
+        $addressComponents = $json['results'][0]['address_components'];
 
-        return $city;
+        if (isset($addressComponents[5])){
+         return $addressComponents[5]['long_name'];
+        }
+
+        return null;
     }
 }

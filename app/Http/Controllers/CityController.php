@@ -17,18 +17,30 @@ class CityController extends Controller
         $this->cityService = $cityService;
     }
 
-    public function searchCityName($name)
+    public function searchCityName($name = null)
     {
         if (!$name) {
-            return response()->json(array('status' => 'name is missing'), 400);
+            return response()->json(array('status' => 'name is missing'), 422);
         }
 
         $cities = $this->cityService->searchCityByName($name);
-        return response()->json($cities, 200);
+        if (!$cities->isEmpty())
+            return response()->json($cities, 200);
+
+        return response()->json(array('status' => 'city not found'), 404);
     }
 
-    public function searchCityByCoords()
+    public function searchCityByCoords($lat = null, $lng= null)
     {
-        return response()->json($this->cityService->searchCityByCoords(40.300581, 21.789813), 200);
+        if (!$lat || !$lng) {
+            return response()->json(array('status' => 'data are missing'), 422);
+        }
+
+        $cities = $this->cityService->searchCityByCoords($lat, $lng);
+
+        if ($cities)
+            return response()->json($cities, 200);
+
+        return response()->json(array('status' => 'city not found'), 404);
     }
 }
